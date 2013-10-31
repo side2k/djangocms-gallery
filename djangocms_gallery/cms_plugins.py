@@ -19,7 +19,7 @@ class GalleryPlugin(CMSPluginBase):
 
     @property
     def declared_fieldsets(self):
-        self.fieldsets = ((None, {'fields': self.fields}))
+        self.fieldsets = [((None, {'fields': self.fields}))]
         if settings.ADVANCED_OPTIONS:
             self.fieldsets = (self.fieldsets, (_('Advanced'), {'fields': self.advanced_fields, 'classes': ['collapse',]}))
         return super(GalleryPlugin, self)._declared_fieldsets()
