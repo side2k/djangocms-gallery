@@ -34,7 +34,7 @@ class Gallery(CMSPlugin):
     def copy_relations(self, old_instance):
         for slide in old_instance.slides.all():
             slide.pk = None
-            slide.gallery = self.pk
+            slide.gallery = self
             slide.save()
 
     def save(self, *args, **kwargs):
